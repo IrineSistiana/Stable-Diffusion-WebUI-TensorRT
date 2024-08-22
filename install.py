@@ -2,7 +2,7 @@ import launch
 import sys
 
 python = sys.executable
-TRT_VERSION="10.0.0b6"
+TRT_VERSION="10.0.1"
 
 def install():
     if not launch.is_installed("importlib_metadata"):
