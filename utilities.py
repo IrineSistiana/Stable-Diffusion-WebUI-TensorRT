@@ -353,6 +353,6 @@ class Engine:
         for opt_profile in range(self.engine.num_optimization_profiles):
             for binding in range(self.engine.num_io_tensors):
                 name = self.engine.get_tensor_name(binding)
-                shape = self.engine.get_profile_shape(opt_profile, name)
+                shape = self.engine.get_tensor_profile_shape(name, opt_profile)
                 out += f"\t{name} = {shape}\n"
         return out
