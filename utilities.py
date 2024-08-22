@@ -276,7 +276,14 @@ class Engine:
                     timing_cache
                 )
             )
+            try:
+                warning(f'Creating empty timing cache file {timing_cache}')
+                with open(timing_cache, 'w') as _: 
+                    pass 
+            except Exception as e:
+                warning(f'Failed to create timing cache file {timing_cache}, cause: {e}')
         if cache is not None:
+            warning("Timing cache loaded")
             config.set_timing_cache(cache, ignore_mismatch=True)
 
         profiles = copy.deepcopy(p)
